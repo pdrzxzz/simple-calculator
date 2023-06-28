@@ -8,7 +8,7 @@ function one() {
             secondVisor += "1";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "1";
             document.querySelector(".visor").textContent = visorText
         }
@@ -20,7 +20,7 @@ function two() {
             secondVisor += "2";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "2";
             document.querySelector(".visor").textContent = visorText
         }
@@ -32,7 +32,7 @@ function three() {
             secondVisor += "3";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "3";
             document.querySelector(".visor").textContent = visorText
         }
@@ -44,7 +44,7 @@ function four() {
             secondVisor += "4";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "4";
             document.querySelector(".visor").textContent = visorText
         }
@@ -56,7 +56,7 @@ function five() {
             secondVisor += "5";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "5";
             document.querySelector(".visor").textContent = visorText
         }
@@ -68,7 +68,7 @@ function six() {
             secondVisor += "6";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "6";
             document.querySelector(".visor").textContent = visorText
         }
@@ -80,7 +80,7 @@ function seven() {
             secondVisor += "7";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "7";
             document.querySelector(".visor").textContent = visorText
         }
@@ -92,7 +92,7 @@ function eight() {
             secondVisor += "8";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "8";
             document.querySelector(".visor").textContent = visorText
         }
@@ -104,7 +104,7 @@ function nine() {
             secondVisor += "9";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "9";
             document.querySelector(".visor").textContent = visorText
         }
@@ -122,7 +122,7 @@ function zero() {
             secondVisor += "0";
             document.querySelector(".visor").textContent = secondVisor
         }
-        else if (visorText.length <= 10) {
+        else if (visorText.length <= 10 && visorToggle === false) {
             visorText += "0";
             document.querySelector(".visor").textContent = visorText
         }
@@ -160,54 +160,56 @@ function divide() {
     visorToggle = true;
 }
 
+let resulting = 0
 function result() {
+    // realizando nova operação:
     if (visorText.length != 0 && secondVisor.length != 0) {
         if (operator === "+") {
-            let resulting = Number(visorText) + Number(secondVisor);
-            document.querySelector(".visor").textContent = resulting;
-            visorText = String(resulting);
+            resulting = Number(visorText) + Number(secondVisor);
         }
         else if (operator === "-") {
-            let resulting = Number(visorText) - Number(secondVisor);
-            document.querySelector(".visor").textContent = resulting;
-            visorText = String(resulting);
+            resulting = Number(visorText) - Number(secondVisor);
         }
         else if (operator === "*") {
-            let resulting = Number(visorText) * Number(secondVisor);
-            document.querySelector(".visor").textContent = resulting;
-            visorText = String(resulting);
+            resulting = Number(visorText) * Number(secondVisor);
         }
         else if (operator === "/") {
-            let resulting = Number(visorText) / Number(secondVisor);
-            document.querySelector(".visor").textContent = resulting;
-            visorText = String(resulting);
+            resulting = Number(visorText) / Number(secondVisor);
         }
-
+        document.querySelector(".visor").textContent = resulting;
+        resulting = String(resulting)
+        if (resulting.includes("e")) {
+                document.querySelector(".visor").textContent = resulting.substring(0, 7) + resulting.substring(resulting.length - 4, resulting.length);
+            }
+        else {
+                document.querySelector(".visor").textContent = resulting.substring(0, 11)
+            }
+            visorText = (resulting);
         reservedsecondvisor = secondVisor;
         secondVisor = "";
         visorToggle = false;
     }
-    else if (visorText.length != 0 && secondVisor.length === 0) {
+    // repetindo operação passada:
+    else if (visorText.length != 0 && secondVisor.length === 0 && operator != "") {
         if (operator === "+") {
             resulting = Number(visorText) + Number(reservedsecondvisor);
-            document.querySelector(".visor").textContent = resulting;
-            visorText = String(resulting);
         }
         else if (operator === "-") {
             resulting = Number(visorText) - Number(reservedsecondvisor);
-            document.querySelector(".visor").textContent = resulting;
-            visorText = String(resulting);
         }
         else if (operator === "*") {
             resulting = Number(visorText) * Number(reservedsecondvisor);
-            document.querySelector(".visor").textContent = resulting;
-            visorText = String(resulting);
         }
         else if (operator === "/") {
             resulting = Number(visorText) / Number(reservedsecondvisor);
-            document.querySelector(".visor").textContent = resulting;
-            visorText = String(resulting);
         }
+        if (resulting.includes("e")) {
+            document.querySelector(".visor").textContent = resulting.substring(0, 7) + resulting.substring(resulting.length - 4, resulting.length);
+        }
+    else {
+            document.querySelector(".visor").textContent = resulting.substring(0, 11)
+        }
+        visorText = (resulting);
         secondVisor = "";
         visorToggle = false;
     }

@@ -2,6 +2,7 @@ let visorText = ""
 let secondVisor = ""
 let operator = ""
 let visorToggle = false
+let resulting = 0
 
 function one() {
         if (visorToggle === true && secondVisor.length <= 10) {
@@ -160,7 +161,6 @@ function divide() {
     visorToggle = true;
 }
 
-let resulting = 0
 function result() {
     // realizando nova operação:
     if (visorText.length != 0 && secondVisor.length != 0) {
@@ -192,26 +192,24 @@ function result() {
     // repetindo operação passada:
     else if (visorText.length != 0 && secondVisor.length === 0 && operator != "") {
         if (operator === "+") {
-            resulting = Number(visorText) + Number(reservedsecondvisor);
+            resulting = String(Number(visorText) + Number(reservedsecondvisor));
         }
         else if (operator === "-") {
-            resulting = Number(visorText) - Number(reservedsecondvisor);
+            resulting = String(Number(visorText) - Number(reservedsecondvisor));
         }
         else if (operator === "*") {
-            resulting = Number(visorText) * Number(reservedsecondvisor);
+            resulting = String(Number(visorText) * Number(reservedsecondvisor));
         }
         else if (operator === "/") {
-            resulting = Number(visorText) / Number(reservedsecondvisor);
+            resulting = String(Number(visorText) / Number(reservedsecondvisor));
         }
         if (resulting.includes("e")) {
             document.querySelector(".visor").textContent = resulting.substring(0, 7) + resulting.substring(resulting.length - 4, resulting.length);
         }
-    else {
+        else {
             document.querySelector(".visor").textContent = resulting.substring(0, 11)
         }
-        visorText = (resulting);
-        secondVisor = "";
-        visorToggle = false;
+        visorText = resulting;
     }
 }
 

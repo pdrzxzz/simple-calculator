@@ -1,0 +1,127 @@
+:root {
+    --mainColor: #323031;
+    --secondColor: #7EA172;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-base {
+    background-color: var(--mainColor);
+    width: 20vw;
+    height: 30vw;
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.visor {
+    background-color: #1b1a1a;
+    width: 17vw;
+    height: 3.5vw;
+    position: absolute;
+    top: 2vw;
+    border-radius: 1vw;
+    text-align: right;
+    padding-right: 1vw;
+    color: white;
+    font-size: 3vw;
+}
+
+button {
+    border: 3px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #2e2c2c;
+}
+
+button:active {
+    background-color: #7A7D7D;
+}
+
+.functions {
+    display: flex;
+    position: absolute;
+    justify-content: flex-start;
+    width: 14vw;
+    height: 2.5;
+    top: 6.5vw;
+    left: 1vw;
+}
+
+.function {
+    background-color: #a7a0a0;
+    width: 3vw;
+    height: 2.5vw;
+    color: white;
+    font-size: 1.5vw;
+    border-radius: 1vw;
+    margin-right: 1vw;
+}
+
+.function:active {
+    background-color: #a7a0a0;
+}
+
+.numbers {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 20vw;
+    width: 14vw;
+    top: 10vw;
+    left: 0.5vw;
+}
+
+.number {
+    background-color: #7A7D7D;
+    width: 4vw;
+    height: 4vw;
+    color: white;
+    font-size: 3.5vw;
+    border-radius: 1vw;
+}
+
+
+.operators {
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 20vw;
+    width: 3.5vw;
+    top: 8.5vw;
+    right: 0.5vw;
+
+}
+
+.operator {
+    background-color: #7A7D7D;
+    width: 3vw;
+    height: 3vw;
+    color: white;
+    font-size: 2.5vw;
+    border-radius: 1vw;
+}
+
+.result-button {
+    background-color: #a7a0a0;
+    width: 3vw;
+    height: 3vw;
+    color: white;
+    font-size: 2.5vw;
+    text-align: center;
+    border-radius: 1vw;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="main-base">
+        <div class="visor">0</div>
+        <div class="functions">
+            <button class="function" onclick="erase()"><-</button>
+            <button class="function" onclick="eraseall()">AC</button>
+        </div>
+        <div class="numbers">
+            <button class="number" onclick="one()">1</button>
+            <button class="number" onclick="two()">2</button>
+            <button class="number" onclick="three()">3</button>
+            <button class="number" onclick="four()">4</button>
+            <button class="number" onclick="five()">5</button>
+            <button class="number" onclick="six()">6</button>
+            <button class="number" onclick="seven()">7</button>
+            <button class="number" onclick="eight()">8</button>
+            <button class="number" onclick="nine()">9</button>
+            <button class="number" onclick="zero()">0</button>
+        </div>
+        <div class="operators">
+            <button class="sum operator" onclick="sum()">+</button>
+            <button class="subtract operator" onclick="subtract()">-</button>
+            <button class="multiply operator" onclick="multiply()">x</button>
+            <button class="divide operator" onclick="divide()">/</button>
+            <button class="result-button" onclick="result()">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

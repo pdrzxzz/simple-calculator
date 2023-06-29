@@ -2,6 +2,7 @@ let firstValue = ""
 let secondValue = ""
 let operator = ""
 let valueToggle = false
+let resulting = 0
 
 function one() {
         if (valueToggle === true && secondValue.length <= 10) {
@@ -160,7 +161,6 @@ function divide() {
     valueToggle = true;
 }
 
-let resulting = 0
 function result() {
     // realizando nova operação:
     if (firstValue.length != 0 && secondValue.length != 0) {
@@ -192,26 +192,27 @@ function result() {
     // repetindo operação passada:
     else if (firstValue.length != 0 && secondValue.length === 0 && operator != "") {
         if (operator === "+") {
-            resulting = Number(firstValue) + Number(reservedsecondValue);
+            resulting = String(Number(visorText) + Number(reservedsecondValue));
         }
         else if (operator === "-") {
-            resulting = Number(firstValue) - Number(reservedsecondValue);
+            resulting = String(Number(visorText) - Number(reservedsecondValue));
         }
         else if (operator === "*") {
-            resulting = Number(firstValue) * Number(reservedsecondValue);
+            resulting = String(Number(visorText) * Number(reservedsecondValue));
         }
         else if (operator === "/") {
-            resulting = Number(firstValue) / Number(reservedsecondValue);
+            resulting = String(Number(visorText) / Number(reservedsecondValue));
         }
         if (resulting.includes("e")) {
             document.querySelector(".visor").textContent = resulting.substring(0, 7) + resulting.substring(resulting.length - 4, resulting.length);
         }
-    else {
+        else {
             document.querySelector(".visor").textContent = resulting.substring(0, 11)
         }
         firstValue = (resulting);
         secondValue = "";
         valueToggle = false;
+        visorText = resulting;
     }
 }
 

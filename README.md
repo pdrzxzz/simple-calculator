@@ -12,4 +12,4 @@ Try it directly on the [project website](https://pdrzxzz.github.io/Simple-calcul
 - JavaScript  
 ---  
 
-Developed with ❤️ by [pdrzxzz](https://github.com/pdrzxzz)
+Made by [pdrzxzz](https://github.com/pdrzxzz) | Computer Science Student 🎓
